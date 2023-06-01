@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        caption {
+            font-weight: bold;
+        }
+
+        button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Alunos</caption>
+        <tr>
+            <th>ID</th>
+            <th>Matrícula</th>
+            <th>Nome</th>
+            <th>Data de Nascimento</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Deletar</th>
+            <th>Alterar</th>
+        </tr>
+        <% for (aluno of alunos) { %>
+            <tr>
+                <td><%= aluno.id %></td>
+                <td><%= aluno.matricula %></td>
+                <td><%= aluno.nome %></td>
+                <td><%= aluno.dataDeNascimento %></td>
+                <td><%= aluno.email %></td>
+                <td><%= aluno.status %></td>
+                <td><a href="/alunos/remover/<%= aluno.id %>">Deletar</a></td>
+                <td><a href="/alteracao/<%= aluno.id %>">Alterar</a></td>
+            </tr>
+        <% } %>
+    </table>
+    <button onclick="window.location.href='http://localhost:3000/alteracao/0';">Cadastrar</button>
+</body>
+</html>

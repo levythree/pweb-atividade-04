@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alteração</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        table {
+            text-align: left;
+        }
+
+        table, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th {
+            border-right: none;
+        }
+
+        td {
+            border-bottom: 1px solid black;
+        }
+
+        form {
+            text-align: center;
+        }
+        
+        button {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            height: 25px;
+            width: 100%;
+        }
+        
+        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <form action="/alteracao/<%= aluno.id %>" method="post">
+        <table>
+            <tr>
+                <th>Matrícula:</th>
+                <td><input name="Matricula" value="<%= aluno.matricula %>" type="number"></td>
+            </tr>
+            <tr>
+                <th>Nome:</th>
+                <td><input name="Nome" value="<%= aluno.nome %>" type="text"></td>
+            </tr>
+            <tr>
+                <th>Data de nascimento:</th>
+                <td><input name="DataDeNascimento" value="<%= aluno.dataDeNascimento %>"type="text"></td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td><input name="Email" value="<%= aluno.email %>" type="email"></td>
+            </tr>
+            <tr>
+                <th>Staus:</th>
+                <td><input name="Status" value="<%= aluno.status %>" type="text"></td>
+            </tr>
+        </table>
+        <button type="submit">
+            <% if (aluno.id == 0) { %>
+                Cadastar
+            <% } else { %>
+                Alterar
+            <% } %>
+        </button>
+        <a href="/alunos">Cancelar</a>
+    </form>
+</body
+</html>
