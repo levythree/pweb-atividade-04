@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,8 @@
         body {
             display: flex;
             justify-content: center;
+            flex-direction: column;
+            align-items: center;
         }
 
         table, th, td {
@@ -25,9 +27,12 @@
             right: 10px;
         }
 
-        form {
-            position: absolute;
-            top: 100px;
+        .reversao {
+            text-align: center;
+        }
+
+        .reverter {
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -60,8 +65,9 @@
         <p>Digite um nome para efetuar a busca:</p>
         <input name="Nome" type="text">
         <button type="submit">Buscar</button>
-        <p>Reverter busca:</p>
-        <button onclick="window.location.href='http://localhost:3000/alunos'">Reverter</button>
+        <div class="reversao">
+            <button class="reverter" onclick="window.location.href='http://localhost:3000/alunos'">Reverter busca</button>
+        </div>
     </form>
 </body>
 </html>
